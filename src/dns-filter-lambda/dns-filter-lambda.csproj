@@ -16,9 +16,11 @@
     </AssemblyAttribute>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Amazon.Lambda.Core" Version="2.2.0" />
-    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.0" />
-    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.301.17" />
+    <PackageReference Include="Amazon.Lambda.Core" Version="2.6.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.4" />
+    <PackageReference Include="AWSSDK.Core" Version="4.0.0.10" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="4.0.1.6" />
+    <PackageReference Include="AWSSDK.KinesisFirehose" Version="4.0.1.6" />
     <PackageReference Include="DNS" Version="7.0.0" />
   </ItemGroup>
 </Project>
