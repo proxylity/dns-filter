@@ -68,6 +68,8 @@ admin-web-function-->blocklist-codebuild
 
 > **NOTE**: The account in which you deploy **must be subscribed to Proxylity UDP Gateway**, which is available in [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-cpvl5wgt2yo2e). Subscribing is free and you will only be billed for Listeners you create and traffic delivered to Destinations you configure. For personal use it is likely that this service will operate within the AWS and Proxylity free tiers. For more information see [proxylity.com](https://proxylity.com/landing/love.html).
 
+The [global template](./templates/dns-filter-global.template.json) restricts the Proxylity role's trust policy to the configured service role and requires `sts:ExternalId` to equal `Account.ExternalId` from the S3-backed `ProxylityConfig` mapping. No manual external-ID parameter is needed. Redeploy the global stack to apply this condition to an existing installation.
+
 ### Requirements
 
 Use Linux or WSL 2 with Bash, .NET 10, Node.js 24/npm, Git, `tar`, `zip`, `sha256sum`, AWS CLI, SAM CLI, and `jq`. Authenticate the AWS CLI with a deployment identity authorized to create the stacks, pass their execution roles, start CodeBuild, and use the artifact S3/KMS resources.

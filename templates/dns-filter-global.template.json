@@ -40,7 +40,18 @@
                   ]
                 }
               },
-              "Action": "sts:AssumeRole"
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "sts:ExternalId": {
+                    "Fn::FindInMap": [
+                      "ProxylityConfig",
+                      "Account",
+                      "ExternalId"
+                    ]
+                  }
+                }
+              }
             }
           ]
         }
